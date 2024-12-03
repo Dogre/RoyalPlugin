@@ -23,7 +23,7 @@ use Dog\Exception\PlayerAlreadyAssignedException;
  * Add royal support
  *
  * @author  Dog
- * @version 1.01
+ * @version 1.02
  */
 class Royal implements Plugin, CallbackListener, CommandListener, TimerListener
 {
@@ -31,7 +31,7 @@ class Royal implements Plugin, CallbackListener, CommandListener, TimerListener
 	 * Constants
 	 */
 	const ID = 180;
-	const VERSION = 1.01;
+	const VERSION = 1.02;
 	const NAME = 'Royal';
 	const AUTHOR = 'Dog';
 
