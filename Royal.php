@@ -344,16 +344,16 @@ class Royal implements Plugin, CallbackListener, CommandListener, TimerListener
 					Account::toAccountId($player->login),
 					(string) Teams::GetTeamId($player)
 				], true);
-
-				$triggered = $this->maniaControl->getClient()->executeMulticall();
-				if ($triggered[0]) {
-					$this->matchStatus = self::MATCH_IN_PROGRESS;
-					$this->maniaControl->getChat()->sendChat("Match starting...");
-					$this->maniaControl->getManialinkManager()->hideManialink(self::MLID_TEAMDISPLAY);
-				}
 			} catch (\Exception $e) {
 				Logger::logError($e->getMessage());
 			}
+		}
+
+		$triggered = $this->maniaControl->getClient()->executeMulticall();
+		if ($triggered[0]) {
+			$this->matchStatus = self::MATCH_IN_PROGRESS;
+			$this->maniaControl->getChat()->sendChat("Match starting...");
+			$this->maniaControl->getManialinkManager()->hideManialink(self::MLID_TEAMDISPLAY);
 		}
 	}
 
